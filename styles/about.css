@@ -1,0 +1,271 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif; /* sets the font family to helvetica and the fallback fonts if the helvetica font does not exist */
+  background-color: white; /* sets the background color of the body */
+}
+
+/* Navbar styles start here */
+/* The navbar is the same in all pages */
+.navbar {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10em;
+}
+
+.title-logo:hover {
+	color: #cd9954;
+}
+
+.title-logo .logo {
+	width: 125px;
+}
+
+.title-logo .logo img {
+	display: block;
+	aspect-ratio: 100 / 80;
+	width: 100%;
+}
+
+.title-logo {
+	display: block;
+	padding: 12px 0;
+	font-size: 26px;
+	font-weight: 600;
+	color: #e1634c;
+	display: flex;
+	justify-content: space-between;
+	gap: 10px;
+	align-items: center;
+	transition: 400ms;
+}
+
+.title-logo:hover {
+	color: #cd9954;
+}
+
+.title-logo .logo {
+	width: 125px;
+}
+
+.title-logo .logo img {
+	display: block;
+	aspect-ratio: 100 / 80;
+	width: 100%;
+}
+
+.navbar-links ul {
+	display: flex;
+	justify-content: space-between;
+	gap: 32px;
+}
+
+.navbar-links ul li {
+	padding: 16px 0;
+}
+
+.navbar-links ul li a {
+	color: rgb(172, 32, 32);
+	font-size: 16px;
+	font-weight: 500;
+	font-size: 22px;
+	transition: 400ms;
+}
+
+.navbar-links ul li:hover a {
+	color: #d5a03d;
+}
+/*ABOUT SECTION*/
+
+.container {
+  width: 100%; /* This element sets the width of the container to 100% */
+  min-height: 100vh; /* This element sets the minimum height of the viewport */
+  background-color: white;
+  color: rgb(172, 32, 32)
+}
+
+.container .title {
+  width: 100%;
+  display: flex; /* This element aligns the child elements in a row*/
+  align-items: center;
+  justify-content: center; /*This element contains the space between and around the title and container */
+  font-size: 22px;
+  letter-spacing: 1.5px; /*This element sets the horizontal spacing behavior between text characters for 1.5px.*/
+  padding: 50px 0px;
+}
+
+.container .title h1 {
+  margin-top: 100px;
+}
+
+.container .title h1::after {
+  content: ""; /*This inserts generated content*/
+  height: 6px;
+  width: 180px;
+  position: relative; /*This causes the element to adjust away from its normal position*/
+  display: block; /*This property set to block starts on a new line and takes up the available screen width*/
+  margin: auto;
+}
+
+.content {
+  width: 85%;
+  display: grid;
+  grid-template-columns: repeat(
+    2,
+    1fr
+  ); /*This specifies the number of columns in this grid layoout including the display: grid*/
+  grid-gap: 40px; /*This defines the size of the gap between rows and columns to 40px*/
+  margin: 30px auto;
+}
+
+.content .article {
+  box-shadow: 0px 0px 2px 0px rgba(176, 135, 99, 0.2);
+  background-color: peachpuff;
+  padding: 25px 25px;
+  text-align: left;
+}
+
+.content .article h2 {
+  font-size: 28px;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.content .article p {
+  margin-top: 30px;
+  font-size: 19px;
+  line-height: 1.5;
+  color: black;
+}
+
+.content .article a {
+  font-size: 22px;
+  text-decoration: none;
+  display: inline-block;
+  padding: 12px 35px;
+  background-color: #557b55;
+  border-radius: 25px; /*This sets the border radius of the button to 25px*/
+  color: #fff;
+  border: 1px solid #a6f1a6;
+  letter-spacing: 1.5px;
+  margin-top: 35px;
+}
+
+.content .article a:hover {
+  /*The hover effect takes place when you hover over the button and the button changes its color*/
+  background-color: #fff;
+  color: #557b55;
+  transition: 0.2s ease; /*The transition property is used for the button including the hover effect*/
+}
+.image-section {
+  width: 100%;
+  margin: auto;
+}
+
+.image-section img {
+  width: 100%;
+  height: auto;
+}
+
+.dropmenu{
+  overflow-x: hidden;
+  display: none;
+}
+@media screen and (max-width: 900px) {
+  /*Screens lower than 900px, it changes the style of the content and article to responsive*/
+  .content {
+    grid-template-columns: repeat(
+      1,
+      1fr
+    ); /*This aligns the items in a 1-1 grid*/
+  }
+
+  .article {
+    text-align: center;
+  }
+		body{
+			overflow-x: hidden;
+		}
+		.navbar .navbar-links {
+		  display: none;
+		}
+		.dropmenu {
+		  display: block; /* because of the smaller screen, we use this instead of the nav-links */
+		  font-weight: 700; /* bold */
+		  margin-right: 0px; /* 0px margin to the right */
+		  overflow-x: hidden; /* if this overflows along the x-axis, the dropmenu will not be shown */
+		}
+	  
+		.dropdown-menu-content {
+		  overflow-x: hidden; /* because the menu is hidden to the right with the translateX property, we need to hide it from the user */
+		  position: absolute; /* positioned absolutely on the top right corner of the page */
+		  margin: 0;
+		  right: 0;
+		  top: 0;
+		  height: 100vh;  /*this is the viewport height, which mean that the dropdown menu will be from the top to the bottom of the screen*/
+		  width: 200px;
+		  transform: translateX(200px); /* pushes the item 200px to the right along the x-axis */
+		  transition: transform 0.3s; /* transformation will happen in 300ms */
+		  background-color: white;
+		  border-radius: 0 0 0 35px; /* bottom left corner has a 35px border radius */
+		  padding: 0;
+		  display: flex;
+		  flex-direction: column;
+		  align-items: center;
+		}
+	  
+		.dropdown-menu-content div {
+		  margin: 25px 20px; /* 25px margin on top and bottom and 20px left and right */
+		}
+	  
+		.dropdown-menu-content div a {
+		  text-decoration: none;
+		  color: #c9ad23;
+		  display: block;
+		  width: max-content; /* width of the div that contains the links */
+		  padding: 0;
+		  transition: 0.3s;
+		}
+
+		.dropdown-menu-content div a:hover{ /*when you hover above the links, the color will change in 300ms, and the cursor will become a pointer*/
+			color: #d5a03d;
+			transition: 0.3s;
+			cursor: pointer;
+		}
+		.navbar {
+		  padding: 0 1em;
+		}
+		#burgermenu{ /*because we used an image, we make the cursor a pointer to make it clear to the user that the burger menu is clickable*/
+			cursor: pointer;
+		}
+	  }
+
+/*=================================================================================*/
+
+
+.footer {
+	display: flex; /* display the element as a flex container */
+	justify-content: space-around; /* justify the elements inside the element to be spaced around each other */
+	background-color: #f08074;
+	color: #000000;
+	text-align: center; /* set the text alignment of the element to center */
+	align-items: center; /* align the elements inside the element to the center */
+	padding: 10px;
+	height: 150px; /* set the height of the element to 150px */
+  }

@@ -1,0 +1,338 @@
+/* box sizing border box sets the elements to include the padding and borders to its width,
+	for example if we set the width of an element to 100px and the padding to 10px and the border to 5px, the width will always be 100px, on the contrary if we don't use box-sizing: border-box the width will be 100px + 10px + 5px = 115px
+*/
+* {
+	box-sizing: border-box; 
+	margin: 0; 
+	padding: 0;
+	list-style-type: none;
+	text-decoration: none;
+}
+
+body {
+	font-family: Helvetica, Arial, sans-serif; /* sets the font family to helvetica and the fallback fonts if the helvetica font does not exist */
+	background-color: #f9905b; /* sets the background color of the body */
+}
+
+/* Navbar styles start here */
+/* The navbar is the same in all pages */
+.navbar {
+	z-index: 100;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-color: #fff;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	padding: 0 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 10em;
+}
+
+.title-logo {
+	display: block;
+	padding: 12px 0;
+	font-size: 26px;
+	font-weight: 600;
+	color: #e1634c;
+	display: flex;
+	justify-content: space-between;
+	gap: 10px;
+	align-items: center;
+	transition: 400ms;
+}
+
+.title-logo:hover {
+	color: #e1634c;
+}
+
+.title-logo .logo {
+	width: 125px;
+}
+
+.title-logo .logo img {
+	display: block;
+	aspect-ratio: 100 / 80;
+	width: 100%;
+}
+
+.navbar-links ul {
+	display: flex;
+	justify-content: space-between;
+	gap: 32px;
+}
+
+.navbar-links ul li {
+	padding: 16px 0;
+}
+
+.navbar-links ul li a {
+	color: rgb(172, 32, 32);
+	font-size: 16px;
+	font-weight: 500;
+	font-size: 22px;
+	transition: 400ms;
+}
+
+.navbar-links ul li:hover a {
+	color: #d5a03d;
+}
+
+/* Navbar styles end here */
+
+/* Hero banner for Contact us page*/
+.hero {
+	background: /* set the background of the hero element to the image and also a linear gradient so we lower the brightness of the image */
+		linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.6)), 
+	 	url(../images/banner.jpg) no-repeat center center/cover;
+	padding: 17.5em 0 17.5em 10em; /* set the padding of the hero element */
+	display: flex; /* display the hero element as a flex container */
+	flex-direction: column; /* set the flex direction of the hero element to column */
+	gap: 15px; /* set the gap between the elements inside the hero element to 15px */
+}
+
+.hero .hero-text {
+	display: flex; /* display the hero-text element as a flex container */
+	flex-direction: column; /* set the flex direction of the hero-text element to column */
+	gap: 5px; /* set the gap between the elements inside the hero-text element to 5px */
+}
+
+.hero {
+	font-family: 'Playfair Display'; /* set the font family of the hero element to playfair display */
+}
+
+.hero .hero-text h1 {
+	text-transform: uppercase; /* change the element font to uppercase */
+	font-size: 80px; /* set the font size of the h1 element to 80px */
+	font-weight: 600; /* set the font weight of the h1 element to 600 */
+	color: #fff; /* set the color of the h1 element to white */
+}
+
+.hero .secondary-text {
+	font-size: 40px;
+	font-weight: 500;
+	color: #f6ecff;
+}
+.dropmenu{
+	display: none;
+	overflow-x: hidden;
+}
+/* In screens lower than 1300px in width we change the styles of the hero to be responsive, change the fontsizes and the paddings */
+@media screen and (max-width: 1300px) {
+	.hero { 
+		padding: 17.5em 2em 17.5em 7.5em;
+	}
+
+	.hero .hero-text h1 {
+		font-size: 60px;
+	}
+
+	.hero .secondary-text {
+		font-size: 30px;
+	}
+
+	.hero .hero-text {
+		gap: 2.5px;
+	}
+}
+
+/* In screens lower than 900px we lower the font size and padding even more so that it can be responsive in mobile screens */
+@media screen and (max-width: 900px) {
+	.hero {
+		padding: 17.5em 1.5em 17.5em;
+	}
+		body{
+			overflow-x: hidden;
+		}
+		.navbar .navbar-links {
+		  display: none;
+		}
+		.dropmenu {
+		  display: block; /* because of the smaller screen, we use this instead of the nav-links */
+		  font-weight: 700; /* bold */
+		  margin-right: 0px; /* 0px margin to the right */
+		  overflow-x: hidden; /* if this overflows along the x-axis, the dropmenu will not be shown */
+		}
+	  
+		.dropdown-menu-content {
+		  overflow-x: hidden; /* because the menu is hidden to the right with the translateX property, we need to hide it from the user */
+		  position: absolute; /* positioned absolutely on the top right corner of the page */
+		  margin: 0;
+		  right: 0;
+		  top: 0;
+		  height: 100vh;  /*this is the viewport height, which mean that the dropdown menu will be from the top to the bottom of the screen*/
+		  width: 200px;
+		  transform: translateX(200px); /* pushes the item 200px to the right along the x-axis */
+		  transition: transform 0.3s; /* transformation will happen in 300ms */
+		  background-color: white;
+		  border-radius: 0 0 0 35px; /* bottom left corner has a 35px border radius */
+		  padding: 0;
+		  display: flex;
+		  flex-direction: column;
+		  align-items: center;
+		}
+	  
+		.dropdown-menu-content div {
+		  margin: 25px 20px; /* 25px margin on top and bottom and 20px left and right */
+		}
+	  
+		.dropdown-menu-content div a {
+		  text-decoration: none;
+		  color: #c9ad23;
+		  display: block;
+		  width: max-content; /* width of the div that contains the links */
+		  padding: 0;
+		  transition: 0.3s;
+		}
+
+		.dropdown-menu-content div a:hover{ /*when you hover above the links, the color will change in 300ms, and the cursor will become a pointer*/
+			color: #d5a03d;
+			transition: 0.3s;
+			cursor: pointer;
+		}
+		.navbar {
+		  padding: 0 1em;
+		}
+		#burgermenu{ /*because we used an image, we make the cursor a pointer to make it clear to the user that the burger menu is clickable*/
+			cursor: pointer;
+		}
+	  }
+
+.hero .third-link {
+	width: fit-content; /* set the width of the element to fit the content */
+	display: block; /* display the element as a block element */
+	background-color: #da652f; /* set the background color of the element to #93ad7e */
+	padding: 1em 2em; /* set the padding of the element to 1em on the top and bottom and 2em on the left and right */
+	font-size: 20px;
+	font-weight: 500;
+	color: #fff;
+	transition: 400ms; /* set the transition of the element to 400ms */
+}
+
+.hero .third-link:hover {
+	background-color: #d5a03d; /* set the background color of the element to #c4b6cf when the user hovers over it */
+}
+
+/* Hero banner ends here*/
+/* Contact us page starts here*/
+.division{
+	display: flex;
+    justify-content: space-evenly;
+    margin-bottom: -50px;
+	padding: 60px;
+	width: 80%;
+	margin: auto;
+	 }
+  
+body {
+	font-family: Helvetica, sans-serif;
+	background-color: #ebe8b7;
+	margin: 0;
+	padding: 0;
+  }
+  /* styling of the contact us form*/
+  .leftbox {
+	width: 100%;
+	padding: 10px;
+  }
+  
+  .form-box { /* make the form box responsive and give room to breathe*/
+	margin: 10px;
+	width: 100%;
+	border: 1px solid #ccc;
+	padding: 10px;
+	box-shadow: 3px 3px 3px rgb(211, 144, 76);
+  }
+  
+  .h1{ /* adjust our contact us and location headers*/
+	size: 40em;
+	padding-bottom: 10px;
+	text-align: center;
+	color:rgb(211, 144, 76);
+  }
+  form {
+	margin: 0;
+	padding: 0;
+  }
+  
+  label {
+	display: block;
+	margin-bottom: 5px;
+	font-weight: bold;
+	color: #666;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  textarea { 
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+	border: 2px solid #ccc;
+	border-radius: 4px;
+	background-color: #fff;
+	font-size: 16px;
+	resize: none;
+  }
+  
+  input[type="submit"] {
+	width: 100%;
+	background-color: #cd9954; /* submit button color is set to light green*/
+	color: white;
+	padding: 14px 20px; 
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer; /* this indicates that the cursor has a link */
+	font-size: 16px;
+	transition: 0.3s;
+  }
+  
+  input[type="submit"]:hover {
+	transition: 0.3s;
+	background-color: #C4b6cf; /* when the mouse hovers over the button this is the color it will change to*/
+  }
+
+.footer {
+	display: flex; /* display the element as a flex container */
+	justify-content: space-around; /* justify the elements inside the element to be spaced around each other */
+	background-color: #f08074;
+	color: #000000;
+	text-align: center; /* set the text alignment of the element to center */
+	align-items: center; /* align the elements inside the element to the center */
+	padding: 10px;
+	height: 150px; /* set the height of the element to 150px */
+  }
+  
+/* Styles the map */
+.map {
+	display: flex;
+	/* Sets the map to display flex */
+	flex-direction: column;
+	/* Sets the map to display in a column */
+	align-items: center;
+	/* Sets the map to align the items in the center */
+	margin-bottom: 3%;
+	/* Sets the margin bottom of the map */
+	margin-top: 2%;
+	/* Sets the margin top of the map */
+  }
+
+#findUsHeader {
+	margin-top: 50px;
+	/* Sets the margin top of the map title */
+	margin-bottom: 50px;
+	/* Sets the margin bottom of the map title */
+	font-size: 40px;
+	/* Sets the font size of the map title */
+	}
+
+.aukmap {
+	width: 60%;
+	/* Sets the width of the map */
+	box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+	/* Adds a shadow to the map */
+	}

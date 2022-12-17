@@ -1,0 +1,390 @@
+
+/* Sets all elements to default values */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+/* Sets the body font to helvetica and background color to #c4b6cf */
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  background-color: white;
+}
+
+/* Styles the navbar */
+.navbar {
+	z-index: 100;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-color: #fff;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 10em;
+}
+
+.title-logo {
+	display: block;
+	padding: 12px 0;
+	font-size: 26px;
+	font-weight: 600;
+	color: #e1634c;
+	display: flex;
+	justify-content: space-between;
+	gap: 10px;
+	align-items: center;
+	transition: 400ms;
+}
+
+.title-logo:hover {
+	color: #cd9954;
+}
+
+.title-logo .logo {
+	width: 125px;
+}
+
+.title-logo .logo img {
+	display: block;
+	aspect-ratio: 100 / 80;
+	width: 100%;
+}
+
+.navbar-links ul {
+	display: flex;
+	justify-content: space-between;
+	gap: 32px;
+}
+
+.navbar-links ul li {
+	padding: 16px 0;
+}
+
+.navbar-links ul li a {
+	color: rgb(172, 32, 32);
+	font-size: 16px;
+	font-weight: 500;
+	font-size: 22px;
+	transition: 400ms;
+}
+
+.navbar-links ul li:hover a {
+	color: #d5a03d;
+}
+
+/* Styles the h1 */
+#bookHeader {
+  margin-top: 150px;
+  /* Adds margin to the h1 */
+  color:rgb(172, 32, 32);
+}
+
+/* Styles the container div */
+.container {
+  display: flex;
+  /* Sets the container to display in a row */
+  flex-direction: row;
+  /* Sets the container to display in a row */
+  justify-content: space-around;
+  /* Sets the container to justify the content in the middle */
+  align-items: center;
+  /* Sets the container to align the content in the middle */
+  /* margin-top: 50px; Adds margin to the container */
+}
+
+/* Styles the box of the photo */
+.photoBox {
+  background-color: #fff;
+  /* Sets the background color of the photo box */
+  border-radius: 2em;
+  /* Sets the border radius of the photo box */
+  box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+  /* Adds a shadow to the photo box */
+}
+
+/* Styles the photo */
+.photoBox,
+#profile {
+  width: 550px;
+  /* Sets the width of the photo */
+  height: 700px;
+  /* Sets the height of the photo */
+}
+
+/* Styles the inputs */
+input {
+  color: #000000;
+  /* Sets the color of the inputs */
+  font-size: 1em;
+  /* Sets the font size of the inputs */
+  margin: 0 auto;
+  /* Sets the margin of the inputs */
+  padding: 0.5em 1em;
+  /* Sets the padding of the inputs */
+  border-radius: 0.2em;
+  /* Sets the border radius of the inputs */
+  border: none;
+  /* Sets the border of the inputs */
+  width: 60%;
+  /* Sets the width of the inputs */
+  display: block;
+  /* Sets the inputs to display as a block */
+  border-bottom: 0.3em solid transparent;
+  /* Sets the border bottom of the inputs */
+  transition: all 0.3s;
+  /* Sets the transition of the inputs */
+  margin-bottom: 2%;
+  /* Sets the margin bottom of the inputs */
+  background-color: whitesmoke;
+  /* Sets the background color of the inputs */
+}
+
+/* Styles the select inputs */
+select {
+  color: #000000;
+  /* Sets the color of the select inputs */
+  font-size: 1em;
+  /* Sets the font size of the select inputs */
+  margin: 0 auto;
+  /* Sets the margin of the select inputs */
+  padding: 0.5em 1em;
+  /* Sets the padding of the select inputs */
+  border-radius: 0.2em;
+  /* Sets the border radius of the select inputs */
+  border: none;
+  /* Sets the border of the select inputs */
+  width: 100%;
+  /* Sets the width of the select inputs */
+  display: block;
+  /* Sets the select inputs to display as a block */
+  border-bottom: 0.3em solid transparent;
+  /* Sets the border bottom of the select inputs */
+  transition: all 0.3s;
+  /* Sets the transition of the select inputs */
+  margin-bottom: 2%;
+  /* Sets the margin bottom of the select inputs */
+  background-color: whitesmoke;
+  /* Sets the background color of the select inputs */
+}
+
+/* Styles the submit button */
+#submit {
+  background-color: rgb(231, 175, 175);
+  /* Sets the background color of the submit button */
+  color: #000000;
+  /* Sets the color of the submit button */
+  font-size: 1em;
+  /* Sets the font size of the submit button */
+  margin: 0 auto;
+  /* Sets the margin of the submit button */
+  padding: 0.5em 1em;
+  /* Sets the padding of the submit button */
+  border-radius: 0.2em;
+  /* Sets the border radius of the submit button */
+  border: none;
+  /* Sets the border of the submit button */
+  width: 60%;
+  /* Sets the width of the submit button */
+  display: block;
+  /* Sets the submit button to display as a block */
+  border-bottom: 0.3em solid transparent;
+  /* Sets the border bottom of the submit button */
+  transition: all 0.3s;
+  /* Sets the transition of the submit button */
+  margin-bottom: 2%;
+  /* Sets the margin bottom of the submit button */
+}
+
+/* Styles the submit button when hovered */
+#submit:hover {
+  background-color: #d24a4a;
+  /* Sets the background color of the submit button when hovered */
+  cursor: pointer;
+  /* Sets the cursor of the submit button when hovered */
+}
+
+/* Styles the form */
+.form {
+  width: 25%;
+  /* Sets the width of the form */
+  margin-bottom: 10px;
+  /* Sets the margin bottom of the form */
+  padding: 20px;
+  /* Sets the padding of the form */
+  background-color: #fff;
+  /* Sets the background color of the form */
+  border-radius: 2em;
+  /* Sets the border radius of the form */
+  box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+  /* Adds a shadow to the form */
+}
+
+/* Styles the name and the surname inputs */
+.nameSurname {
+  display: flex;
+  /* Sets the name and the surname to display flex */
+  flex-direction: row;
+  /* Sets the name and the surname inputs to display in a row */
+  justify-content: space-between;
+  /* Sets the name and the surname inputs to justify the content in the middle */
+}
+
+/* Styles the name input */
+#name {
+  width: 45%;
+  /* Sets the width of the name input */
+  margin-right: 5%;
+  /* Sets the margin right of the name input */
+}
+
+/* Styles the surname input */
+#surname {
+  width: 45%;
+  /* Sets the width of the surname input */
+}
+/* The dropdown menu will not be displayed */
+.dropmenu { 
+  display: none;
+}
+/* In screens lower than 900px, a burger menu replaces the links, in order to be more responsive. 
+When the burger menu is clicked, a drop menu flies in from the right with all navigation links */
+@media screen and (max-width: 900px) {
+  .navbar .navbar-links {
+    display: none;
+  }
+  .dropmenu {
+    display: block; /* because of the smaller screen, we use this instead of the nav-links */
+    font-weight: 700; /* bold */
+    margin-right: 0px; /* 0px margin to the right */
+    overflow-x: hidden; /* if this overflows along the x-axis, the dropmenu will not be shown */
+  }
+
+  .dropdown-menu-content {
+    overflow-x: hidden; /* because the menu is hidden to the right with the translateX property, we need to hide it from the user */
+    position: absolute; /* positioned absolutely on the top right corner of the page */
+    margin: 0;
+    right: 0;
+    top: 0;
+    height: 100vh; /*this is the viewport height, which mean that the dropdown menu will be from the top to the bottom of the screen*/
+    width: 200px;
+    transform: translateX(200px); /* pushed the item 200px to the right along the x-axis */
+    transition: transform 0.3s; /* transform will happen in 300ms */
+    background-color: white;
+    border-radius: 0 0 0 35px; /* bottom left corner has a 35px border radius */
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dropdown-menu-content div {
+    margin: 25px 20px; /* 25px margin on top and bottom and 20px left and right */
+  }
+
+  .dropdown-menu-content div a {
+    text-decoration: none;
+    color: #93ad7e;
+    display: block;
+    width: max-content; /* width of the div that contains the links */
+    padding: 0;
+    transition: 0.3s;
+  }
+  #burgermenu{ /*because we used an image, we make the cursor a pointer to make it clear to the user that the burger menu is clickable*/
+    cursor: pointer;
+  }
+
+  .dropdown-menu-content div a:hover{ /*when you hover above the links, the color will change in 300ms, and the cursor will become a pointer*/
+    color: #c4b6cf;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  .container {
+    flex-direction: column-reverse; /* Sets the container to display in a column reverse*/
+  }
+
+  .form {
+    width: 50%; /* Sets the width of the form */
+  }
+
+  .navbar {
+    padding: 0 1em;
+  }
+
+}
+
+/* Styles the map */
+.map {
+  display: flex;
+  /* Sets the map to display flex */
+  flex-direction: column;
+  /* Sets the map to display in a column */
+  align-items: center;
+  /* Sets the map to align the items in the center */
+  margin-bottom: 3%;
+  /* Sets the margin bottom of the map */
+  margin-top: 2%;
+  /* Sets the margin top of the map */
+}
+
+/* Styles the map title */
+#findUsHeader {
+  margin-top: 50px;
+  /* Sets the margin top of the map title */
+  margin-bottom: 50px;
+  /* Sets the margin bottom of the map title */
+  font-size: 40px;
+  /* Sets the font size of the map title */
+  color: rgb(172, 32, 32)
+}
+
+/* Styles the map */
+.aukmap {
+  width: 60%;
+  /* Sets the width of the map */
+  box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+  /* Adds a shadow to the map */
+}
+
+
+.footer {
+	display: flex; /* display the element as a flex container */
+	justify-content: space-around; /* justify the elements inside the element to be spaced around each other */
+	background-color: #f08074;
+	color: #000000;
+	text-align: center; /* set the text alignment of the element to center */
+	align-items: center; /* align the elements inside the element to the center */
+	padding: 10px;
+	height: 150px; /* set the height of the element to 150px */
+  }
+
+/* Styles the footer title */
+.titleheader {
+  color: #000000;
+  /* Sets the color of the footer title */
+  font-size: 40px;
+  /* Sets the font size of the footer title */
+  margin-bottom: 1em;
+  /* Sets the margin bottom of the footer title */
+  text-align: center;
+  /* Sets the text of the footer title to be centered */
+}
+
+/* Styles the text after the reservation is made */
+#reservation {
+  display: flex;
+  /* Sets the text after the reservation is made to display flex */
+  flex-direction: column;
+  /* Sets the text after the reservation is made to display in a column */
+  align-items: center;
+  /* Sets the text after the reservation is made to align the items in the center */
+  margin-bottom: 3%;
+  /* Sets the margin bottom of the text after the reservation is made */
+  margin-top: 2%;
+  /* Sets the margin top of the text after the reservation is made */
+}

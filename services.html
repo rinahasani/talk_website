@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services - TALK</title>
+  <link rel="stylesheet" href="./styles/services.css" />
+  <script src="./javascript/services.js" defer></script> <!--This is the javascript code that enables the user to choose a beautician, a service, and book an appointment-->
+  <script src="./javascript/burgermenu.js" defer></script> <!--This is the javascript code that enables the burger menu for screen sizes under 900px-->
+</head>
+
+<body>
+  <!-- Navigation Bar containing the logo, and the links to other pages -->
+  <div class="navbar">
+    <a class="title-logo" href="index.html">
+      <div class="logo"><img src="./images/logo.png" alt="TALK logo" /></div>
+      <h1>TALK</h1>
+    </a>
+    <div class="navbar-links">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <!-- The dropdown menu for smaller screens starts here -->
+    <div class="dropmenu">
+      <a onclick="showMenu()">
+        <img id="burgermenu" src="./images/menu.png" width="50" height="50">
+      </a>
+      <div id="dropdownMenu" class="dropdown-menu-content">
+        <div><a onclick="closeMenu()" id="closeMenu">X</a></div>
+        <div><a href="index.html">Home</a></div>
+        <div><a href="services.html">Services</a></div>
+        <div><a href="about.html">About</a></div>
+        <div><a href="contact.html">Contact</a></div>
+      </div>
+    </div>
+    <!-- This is where the dropdown menu for smaller screens ends -->
+  </div>
+
+  <!-- Services Page  -->
+  <h1 class="titleheader" id="bookHeader">Book a Appointment</h1>
+  <!-- The container div contains all the elements in the page -->
+  <div class="container">
+    <!-- The pictures div contains the box and the photo of the doctor -->
+    <div class="pictures">
+      <div class="photoBox">
+        <img src="images/doctor1.png" id="profile" alt="A picture of the chosen TALK doctor"/>
+      </div>
+    </div>
+
+    <!-- This form contains the form and the input boxes required to make a reservation-->
+    <div class="form">
+      <div class="selectHairdresser">
+        <!-- This allows to select a doctor-->
+        <select id="doctor" oninput="selectDoctor()">
+          <option value="#" selected>Choose your doctor</option>
+          <option value="doctor 1">Doctor 1</option>
+          <option value="doctor 2">Doctor 2</option>
+          <option value="doctor 3">Doctor 3</option>
+        </select>
+
+        <!-- This allows to select a service -->
+        <select id="service">
+          <option value="#" selected>Choose your service</option>
+          <option value="Chat">Chat</option>
+          <option value="VR">VR</option>
+          <option value="Meditation">Meditation</option>
+          <option value="Yoga">Yoga</option>
+          <option value="Medication">Medication</option>
+        </select>
+      </div>
+
+      <!-- Contains the input for name and surname -->
+      <div class="nameSurname">
+        <input type="text" id="name" name="name" placeholder="Name" />
+        <input type="text" id="surname" name="name" placeholder="Surname" />
+      </div>
+
+      <!-- Contains the input for the date and time -->
+      <div class="dateTime">
+        <input type="date" id="date" />
+        <input type="number" id="time" placeholder="Time" />
+      </div>
+
+      <!-- Contains the input for the phone number and email -->
+      <div class="phoneEmail">
+        <input type="text" id="phone" placeholder="Phone Number" />
+        <input type="email" id="email" placeholder="Email" />
+      </div>
+
+      <!-- Button to book a reservation -->
+      <button id="submit" onclick="validateForm()">Book</button>
+    </div>
+  </div>
+
+  <!-- This div contains the text that will be displayed after the reservation is made -->
+  <div class="ReservationText">
+    <h2 id="reservation"></h2>
+  </div>
+
+  <!-- This div contains the map of the location of the salon -->
+  <div class="map">
+    <h2 id="findUsHeader">Where to find us?</h2>
+    <iframe class="aukmap"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2933.5761988447794!2d21.190073515725796!3d42.67033547916731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135498cd75256c27%3A0xbbf87d6b640faf83!2sThe%20American%20University%20in%20Kosovo!5e0!3m2!1sen!2sca!4v1670636997939!5m2!1sen!2sca"
+      width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+
+  <!-- This div contains the footer of the page -->
+  <div class="footer">
+    <div class="footer-left">
+      <h3>OPEN</h3>
+      <p>Everyday        -</p>
+      
+    </div>
+
+    <div class="footer-center">
+      <h3>Address</h3>
+      <p>Prishtina, Kosovo</p>
+      <p>10000</p>
+      <p>Prishtina, Kosovo</p>
+    </div>
+
+    <div class="footer-right">
+      <h3>Contact</h3>
+      <p>Phone: +383 44 000 000</p>
+      <p>Email: talk@icloud.com</p>
+    </div>
+  </div>
+</body>
+
+</html>
